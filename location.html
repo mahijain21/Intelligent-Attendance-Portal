@@ -1,0 +1,105 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Location Tracker</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <script>-->
+<!--        // get user location using browser geolocation API-->
+<!--        navigator.geolocation.getCurrentPosition(function(position) {-->
+<!--            // create Point object from user location-->
+<!--            var user_location = new L.LatLng(position.coords.latitude, position.coords.longitude);-->
+
+<!--            // create Point object for target location-->
+<!--            var park_location = new L.LatLng(40.7829, -73.9654);-->
+
+<!--            // calculate distance between user and target location-->
+<!--            var distance = user_location.distanceTo(park_location);-->
+
+<!--            if (distance < 1000) { // distance in meters-->
+<!--                alert("You are currently within 1 kilometer of Central Park!");-->
+<!--            } else {-->
+<!--                alert("Sorry, you are not within 1 kilometer of Central Park.");-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<body>-->
+
+<!--<p id="demo">Verify Location</p>-->
+
+<!--<button onclick="getLocation()">Verify</button>-->
+
+<!--<script>-->
+<!--var x = document.getElementById("demo");-->
+
+<!--function getLocation() {-->
+<!--    if (navigator.geolocation) {-->
+<!--        navigator.geolocation.getCurrentPosition(-->
+<!--            // Success function-->
+<!--            showPosition,-->
+<!--            // Error function-->
+<!--            null,-->
+<!--            // Options. See MDN for details.-->
+<!--            {-->
+<!--               enableHighAccuracy: true,-->
+<!--               timeout: 5000,-->
+<!--               maximumAge: 0-->
+<!--            });-->
+<!--    } else {-->
+<!--        x.innerHTML = "Geolocation is not supported by this browser.";-->
+<!--    }-->
+<!--}-->
+
+<!--function showPosition(position) {-->
+<!--    x.innerHTML="Latitude: " + position.coords.latitude +-->
+<!--    "<br>Longitude: " + position.coords.longitude;-->
+<!--}-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Verify Location</p>
+
+<button onclick="getLocation()">Verify</button>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            // Success function
+            showPosition,
+            // Error function
+            null,
+            // Options. See MDN for details.
+            {
+               enableHighAccuracy: true,
+               timeout: 5000,
+               maximumAge: 0
+            });
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
